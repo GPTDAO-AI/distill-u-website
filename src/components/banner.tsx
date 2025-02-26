@@ -73,7 +73,7 @@ const Banner = () => {
       <div className="text-4xl md:text-7xl lg:text-8xl flex flex-wrap items-center justify-center">
         <span className="inline-block">Distill</span>
         <span className="inline-block">&nbsp;</span>
-        <div className="text-textColor2 flex items-baseline">
+        <div className="text-text-2 flex items-baseline">
           {currentText.split("").map((char: string, index: number) => (
             <motion.span
               key={`${index}-${char}`}
@@ -96,7 +96,7 @@ const Banner = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-textColor2 ml-1"
+            className="text-text-2 ml-1"
           >
                 _
           </motion.span>
