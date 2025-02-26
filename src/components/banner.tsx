@@ -1,0 +1,115 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+
+const Banner = () => {
+
+
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  useEffect(() => {
+    const us = [
+      "Uniqueness",
+      "Ultraverse",
+      "Universe",
+      "Ultimation",
+      "Unicorn",
+      "Upsurge",
+      "Utopia"
+    ];
+    const word = us[currentWordIndex];
+    
+    // Mechanical typing effect parameters
+    const baseTypingSpeed = 120; // Base speed between letters
+    const typingVariation = 40; // Random variation to make it feel mechanical
+    const delayAfterWord = 1500; // Wait after word is complete
+    const delayAfterDelete = 500; // Small pause before starting the next word
+    
+    // Calculate a slightly random typing speed for mechanical feel
+    const typingSpeed = baseTypingSpeed + Math.floor(Math.random() * typingVariation);
+    
+    if (!isDeleting && currentText !== word) {
+      // Still typing the current word
+      timeoutRef.current = setTimeout(() => {
+        setCurrentText(word.substring(0, currentText.length + 1));
+      }, typingSpeed);
+    } else if (!isDeleting && currentText === word) {
+      // Finished typing, wait a bit before deleting
+      timeoutRef.current = setTimeout(() => {
+        setIsDeleting(true);
+      }, delayAfterWord);
+    } else if (isDeleting && currentText !== "") {
+      // Deleting the current word
+      timeoutRef.current = setTimeout(() => {
+        setCurrentText(word.substring(0, currentText.length - 1));
+      }, typingSpeed / 1.5); // Faster deletion
+    } else if (isDeleting && currentText === "") {
+      // Finished deleting, move to next word
+      setIsDeleting(false);
+      timeoutRef.current = setTimeout(() => {
+        setCurrentWordIndex((currentWordIndex + 1) % us.length);
+      }, delayAfterDelete);
+    }
+    
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [currentText, currentWordIndex, isDeleting]);
+
+  // Character animation variants
+  const characterVariants = {
+    hidden: { opacity: 0, y: 5 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <div className="mt-8 md:mt-16 w-full h-screen flex flex-col items-start justify-start md:items-center space-y-12 md:space-y-8 p-4">
+      <div className="text-4xl md:text-7xl flex flex-wrap items-center justify-center">
+        <span className="inline-block">Distill</span>
+        <span className="inline-block">&nbsp;</span>
+        <div className="text-textColor2 flex items-baseline">
+          {currentText.split("").map((char: string, index: number) => (
+            <motion.span
+              key={`${index}-${char}`}
+              initial="hidden"
+              animate="visible"
+              variants={characterVariants}
+              transition={{ 
+                duration: 0.1,
+                type: "spring", 
+                stiffness: 500,
+                damping: 10
+              }}
+              className="inline-block"
+            >
+              {char}
+            </motion.span>
+          ))}
+            
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-textColor2 ml-1"
+          >
+                _
+          </motion.span>
+        </div>
+      </div>
+      <div className="text-2xl md:text-4xl">
+        The Cradle of AI Future
+      </div>
+      <div className="w-full md:w-1/4 text-base md:text-lg">
+        Igniting Global AI Revolutions from Silicon Valley&apos;s Core — Where Raw Vision Meets Relentless Execution.
+      </div>
+    </div>
+  );
+};
+
+export default Banner;

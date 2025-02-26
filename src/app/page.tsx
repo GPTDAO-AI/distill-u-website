@@ -1,8 +1,13 @@
+import { Suspense } from "react";
+import Banner from "@/components/banner";
+import Loader from "@/components/loader";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Distill U</h1>
-      <p>The Cradle of AI Future</p>
+    <div className="w-full">
+      <Suspense fallback={<Loader />}>
+        <Banner />
+      </Suspense>
     </div>
   );
 };
