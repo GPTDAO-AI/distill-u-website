@@ -1,8 +1,8 @@
-interface News {
+interface Activity {
   id: string;
   date: string;
   title: string;
   description: string;
 }
 
-export default News;
+export default Activity;

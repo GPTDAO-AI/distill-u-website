@@ -2,8 +2,9 @@ import { Suspense } from "react";
 import Loader from "@/components/loader";
 import Banner from "@/components/banner";
 import Partners from "@/components/partners";
-import Mission from "@/components/mission";
+import Mission from "@/components/missions";
 import News from "@/components/news";
+import Activities from "@/components/activities";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Partners />
       <Mission />
       <News />
+      <Activities />
     </div>
   );
 };

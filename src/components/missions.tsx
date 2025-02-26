@@ -1,8 +1,8 @@
 import SectionLayout from "@/layouts/section-layout";
 
-const Mission = () => {
+const Missions = () => {
   return (
-    <SectionLayout title="Our Mission">
+    <SectionLayout title="Our Missions">
       <div>
         <h1>Mission</h1>
       </div>
@@ -10,4 +10,4 @@ const Mission = () => {
   );
 };
 
-export default Mission;
+export default Missions;

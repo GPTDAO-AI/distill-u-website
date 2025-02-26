@@ -1,4 +1,5 @@
 import Organization from "@/types/organization";
+import { ACTIVITIES } from "@/lib/constants";
 
 const BASE_URL = "http://api.gptdao.ai";
 
@@ -38,7 +39,12 @@ const getNews = async () => {
   return [];
 };
 
+const getActivities = async () => {
+  return ACTIVITIES;
+};
+
 export {
   getPartners,
   getNews,
+  getActivities,
 };
