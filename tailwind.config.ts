@@ -12,7 +12,8 @@ export default {
         background: "var(--background",
         foreground: "var(--foreground)",
 
-        bgColor: "#fbf7f0",
+        bgColor1: "#fbf7f0",
+        bgColor2: "#F1F0E9",
         textColor1: "#1a1a1a",
         textColor2: "#1B4D3E",
       },
