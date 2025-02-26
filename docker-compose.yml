@@ -1,0 +1,12 @@
+services:
+  distill-u-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: distill-u-web:1.0
+    container_name: Distill-U-Web
+    restart: unless-stopped
+    ports:
+      - 3008:3008
+    env_file:
+      - .env
