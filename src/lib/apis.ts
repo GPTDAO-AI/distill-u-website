@@ -34,4 +34,11 @@ const getPartners = async () => {
   }
 };
 
-export { getPartners };
+const getNews = async () => {
+  return [];
+};
+
+export {
+  getPartners,
+  getNews,
+};

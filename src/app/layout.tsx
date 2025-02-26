@@ -26,17 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-bg-1 text-text-1`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-center items-center bg-bg-1 text-text-1`}
       >
-        <div className="max-w-7xl mx-auto grow pb-5 flex flex-col items-center text-center">
+        <div className="w-full max-w-7xl grow pb-5 flex flex-col items-center text-center px-4 md:px-8">
           {/*
           <Suspense fallback={<Loader />}>
             <Navbar />
           </Suspense>
           */}
           {children}
+          <Footer />
         </div>
-        <Footer />
         {/*
         <Footer />
         <Suspense fallback={<Loader />}>

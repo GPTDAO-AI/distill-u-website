@@ -6,10 +6,8 @@ import OrganizationCard from "@/components/organization-card";
 import { HorizontalTicker } from "react-infinite-ticker";
 
 const Marquee = ({ partners }: { partners: Organization[] }) => {
-  // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
   
-  // Shuffle partners only on the client side
   const [shuffledRows, setShuffledRows] = useState<Organization[][]>([]);
   
   useEffect(() => {
@@ -25,19 +23,21 @@ const Marquee = ({ partners }: { partners: Organization[] }) => {
   }, [partners]);
   
   if (!isMounted) {
-    return <div className="flex flex-col gap-4 min-h-[550px]"></div>;
+    return null;
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4">
       {shuffledRows.map((row, index) => (
-        <HorizontalTicker key={index} duration={50000} reverse={index % 2 === 1}>
-          {row.map((partner) => (
-            <div className="w-52 h-32" key={partner.id}>
-              <OrganizationCard organization={partner} />
-            </div>
-          ))}
-        </HorizontalTicker>
+        <div key={index} className="w-full overflow-hidden">
+          <HorizontalTicker duration={50000} reverse={index % 2 === 1}>
+            {row.map((partner) => (
+              <div className="w-52 h-32" key={partner.id}>
+                <OrganizationCard organization={partner} />
+              </div>
+            ))}
+          </HorizontalTicker>
+        </div>
       ))}
     </div>
   );

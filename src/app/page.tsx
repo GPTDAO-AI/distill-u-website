@@ -7,7 +7,7 @@ import News from "@/components/news";
 
 const Home = () => {
   return (
-    <div className="w-full flex flex-col gap-16 items-center justify-center">
+    <div className="w-full flex flex-col gap-12 items-center justify-center">
       <Suspense fallback={<Loader />}>
         <Banner />
       </Suspense>

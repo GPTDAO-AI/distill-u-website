@@ -1,19 +1,22 @@
 import { Suspense } from "react";
 import SectionLayout from "@/layouts/section-layout";
-import Loading from "@/components/loader";
 import Marquee from "@/components/marquee";
 import { getPartners } from "@/lib/apis";
 
 const Partners = async () => {
   const partners = await getPartners();
 
+  if (!partners || partners.length === 0) {
+    return null;
+  }
+
   return (
     <SectionLayout title="Our Partners">
-      <div className="w-full flex flex-col gap-4">
-        <Suspense fallback={<Loading />}>
+      <Suspense fallback={null}>
+        <div className="w-full max-w-7xl mx-auto flex flex-col gap-4">
           <Marquee partners={partners} />
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     </SectionLayout>
   );
 };
