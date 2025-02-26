@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/section-layout";
 
-const News = () => {
+const Activities = () => {
   return (
     <SectionLayout title="News">
       <div>
@@ -10,4 +10,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Activities;

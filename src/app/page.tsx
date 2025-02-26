@@ -1,13 +1,19 @@
 import { Suspense } from "react";
-import Banner from "@/components/banner";
 import Loader from "@/components/loader";
+import Banner from "@/components/banner";
+import Partners from "@/components/partners";
+import Mission from "@/components/mission";
+import News from "@/components/news";
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-16 items-center justify-center">
       <Suspense fallback={<Loader />}>
         <Banner />
       </Suspense>
+      <Partners />
+      <Mission />
+      <News />
     </div>
   );
 };

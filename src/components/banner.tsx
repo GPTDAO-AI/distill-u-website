@@ -69,8 +69,8 @@ const Banner = () => {
   };
 
   return (
-    <div className="mt-8 md:mt-16 w-full h-screen flex flex-col items-start justify-start md:items-center space-y-12 md:space-y-8 px-4 md:px-8 py-4 md:py-8">
-      <div className="text-4xl md:text-7xl flex flex-wrap items-center justify-center">
+    <div className="mt-8 md:mt-16 w-full flex flex-col items-start justify-start md:items-center space-y-12 md:space-y-8 px-4 md:px-8 py-4 md:py-8">
+      <div className="text-4xl md:text-7xl lg:text-8xl flex flex-wrap items-center justify-center">
         <span className="inline-block">Distill</span>
         <span className="inline-block">&nbsp;</span>
         <div className="text-textColor2 flex items-baseline">

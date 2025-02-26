@@ -1,13 +1,13 @@
 import SectionLayout from "@/layouts/section-layout";
 
-const News = () => {
+const Mission = () => {
   return (
-    <SectionLayout title="News">
+    <SectionLayout title="Our Mission">
       <div>
-        <h1>News</h1>
+        <h1>Mission</h1>
       </div>
     </SectionLayout>
   );
 };
 
-export default News;
+export default Mission;
