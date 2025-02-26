@@ -69,7 +69,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="mt-8 md:mt-16 w-full h-screen flex flex-col items-start justify-start md:items-center space-y-12 md:space-y-8 p-4">
+    <div className="mt-8 md:mt-16 w-full h-screen flex flex-col items-start justify-start md:items-center space-y-12 md:space-y-8 px-4 md:px-8 py-4 md:py-8">
       <div className="text-4xl md:text-7xl flex flex-wrap items-center justify-center">
         <span className="inline-block">Distill</span>
         <span className="inline-block">&nbsp;</span>
@@ -102,11 +102,10 @@ const Banner = () => {
           </motion.span>
         </div>
       </div>
-      <div className="text-2xl md:text-4xl">
-        The Cradle of AI Future
-      </div>
-      <div className="w-full md:w-1/4 text-base md:text-lg">
-        Igniting Global AI Revolutions from Silicon Valley&apos;s Core — Where Raw Vision Meets Relentless Execution.
+      <div className="w-full text-base md:text-lg flex justify-end">
+        <p className="w-full md:w-1/2 text-left">
+          We partner with visionary founders at day one, leveraging Palo Alto&apos;s unmatched ecosystem to sharpen technology, scale markets, and execute relentlessly. No hype, no shortcuts — just Silicon Valley&apos;s blueprint for turning AI moonshots into trillion-dollar realities.
+        </p>
       </div>
     </div>
   );

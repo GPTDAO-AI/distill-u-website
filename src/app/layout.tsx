@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-bgColor text-textColor1`}
       >
-        <div className="grow pb-5 flex flex-col items-center text-center">
+        <div className="max-w-7xl mx-auto grow pb-5 flex flex-col items-center text-center">
           {/*
           <Suspense fallback={<Loader />}>
             <Navbar />
