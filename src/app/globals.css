@@ -9,7 +9,10 @@
   --color-bg-1: #fbf7f0;
   --color-bg-2: #F1F0E9;
   --color-text-1: #1a1a1a;
-  --color-text-2: #1B4D3E;
+ /* --color-text-2: #1B4D3E; */
+  --color-text-2: #003153;
+  /*--color-text-2: #81D8D0; */
+  /*--color-text-2: #002FA7; */
 }
 
 @media (prefers-color-scheme: dark) {
