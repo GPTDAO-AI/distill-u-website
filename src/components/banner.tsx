@@ -1,18 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const Banner = () => {
-
-
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
+  // Use ref instead of regular variable to persist between renders
+  const currentWordIndexRef = useRef(0);
+  
   useEffect(() => {
-    const us = [
+    const words = [
       "Uniqueness",
       "Ultraverse",
       "Universe",
@@ -21,15 +21,15 @@ const Banner = () => {
       "Upsurge",
       "Utopia"
     ];
-    const word = us[currentWordIndex];
+    
+    // Use .current to access the ref value
+    const word = words[currentWordIndexRef.current];
     
     // Mechanical typing effect parameters
-    const baseTypingSpeed = 120; // Base speed between letters
-    const typingVariation = 40; // Random variation to make it feel mechanical
-    const delayAfterWord = 1500; // Wait after word is complete
-    const delayAfterDelete = 500; // Small pause before starting the next word
+    const baseTypingSpeed = 120;
+    const typingVariation = 40;
+    const delayAfterWord = 1500;
     
-    // Calculate a slightly random typing speed for mechanical feel
     const typingSpeed = baseTypingSpeed + Math.floor(Math.random() * typingVariation);
     
     if (!isDeleting && currentText !== word) {
@@ -50,9 +50,8 @@ const Banner = () => {
     } else if (isDeleting && currentText === "") {
       // Finished deleting, move to next word
       setIsDeleting(false);
-      timeoutRef.current = setTimeout(() => {
-        setCurrentWordIndex((currentWordIndex + 1) % us.length);
-      }, delayAfterDelete);
+      // Update the ref value
+      currentWordIndexRef.current = (currentWordIndexRef.current + 1) % words.length;
     }
     
     return () => {
@@ -60,7 +59,7 @@ const Banner = () => {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [currentText, currentWordIndex, isDeleting]);
+  }, [currentText, isDeleting]); // Remove currentWordIndex from deps
 
   // Character animation variants
   const characterVariants = {
