@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Distill U | The Cradle of AI Future",
+  title: "Distill Labs | The Cradle of AI Future",
   description: "The Cradle of AI Future",
 };
 
@@ -34,12 +34,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        {/*
-        <Footer />
-        <Suspense fallback={<Loader />}>
-          <ScrollToTop />
-        </Suspense>
-        */}
       </body>
     </html>
   );
