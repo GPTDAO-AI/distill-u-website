@@ -6,6 +6,8 @@ import Mission from "@/components/missions";
 import News from "@/components/news";
 import Activities from "@/components/activities";
 import Resources from "@/components/resources";
+import Location from "@/components/location";
+import Gallery from "@/components/gallery";
 
 const Home = () => {
   return (
@@ -14,10 +16,12 @@ const Home = () => {
         <Banner />
       </Suspense>
       <News />
-      <Partners />
       <Mission />
+      <Partners />
       <Resources />
+      <Location />
       <Activities />
+      <Gallery />
     </div>
   );
 };
