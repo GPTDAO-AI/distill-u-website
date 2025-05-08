@@ -39,7 +39,7 @@ const Missions = () => {
               </div>
               
               {/* Content Box */}
-              <div className="flex-1 bg-gradient-to-b from-bg-1 to-bg-2/5 border border-gray-800/30 rounded-lg p-6 flex flex-col hover:shadow-xl transition-all duration-300">
+              <div className="group flex-1 bg-gradient-to-b from-bg-1 to-bg-2/5 border border-gray-800/30 rounded-lg p-6 flex flex-col hover:bg-bg-2 transition-all duration-300">
                 <h3 className="text-xl font-semibold tracking-tight text-text-2 text-center mb-4">
                   {mission.title}
                 </h3>
