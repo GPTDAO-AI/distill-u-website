@@ -27,9 +27,9 @@ const Intro = ({ index, intro }: { index: number, intro: Intro }) => {
       <div className="flex flex-col md:flex-row items-center">
         {index % 2 === 0 ? (
           <>
-            <div className="w-full md:w-1/2 p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-text-2">{intro.title}</h3>
-              <p className="text-lg text-gray-700">{intro.description}</p>
+            <div className="w-full md:w-1/2 p-4">
+              <h3 className="text-xl font-semibold mb-4 text-text-2">{intro.title}</h3>
+              <p className="text-base text-gray-700">{intro.description}</p>
             </div>
             <div className="w-full md:w-1/2">
               <Image
@@ -43,9 +43,9 @@ const Intro = ({ index, intro }: { index: number, intro: Intro }) => {
           </>
         ) : (
           <>
-            <div className="w-full md:w-1/2 md:order-2 p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-text-2">{intro.title}</h3>
-              <p className="text-lg text-gray-700">{intro.description}</p>
+            <div className="w-full md:w-1/2 md:order-2 p-4">
+              <h3 className="text-xl font-semibold mb-4 text-text-2">{intro.title}</h3>
+              <p className="text-base text-gray-700">{intro.description}</p>
             </div>
             <div className="w-full md:w-1/2 md:order-1">
               <Image

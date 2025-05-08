@@ -44,7 +44,7 @@ const Resources = () => {
             key={category.id}
             className="group relative p-8 border border-gray-800/30 rounded-lg hover:bg-bg-2 transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200 mb-4">
+            <h3 className="text-xl text-text-2 font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200 mb-4">
               {category.title}
             </h3>
             

@@ -70,7 +70,7 @@ const Swiper = ({ images }: SwiperProps) => {
                 >
                   <SwiperSlide key={index}>
                     <div className="flex items-center justify-center">
-                      <div className="relative w-full h-72 md:h-128">
+                      <div className="relative w-full h-44 md:h-96 lg:h-128">
                         <Image
                           src={image}
                           alt={`gallery ${index + 1}`}
