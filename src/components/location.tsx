@@ -10,14 +10,14 @@ interface Intro {
 
 const intro: Intro[] = [
   {
-    title: "Proximity to Stanford University",
-    description: "Our office is conveniently located just 1.3 miles from Stanford University, a short 6-minute drive, ensuring easy access to the campus and its resources.",
+    title: "Located at the Heart of Silicon Valley",
+    description: "Our office is just 1.3 miles from Stanford University with a short 6-minute drive, providing easy access to the most advanced tech ecosystem.",
     image: "/images/distance.jpg",
   },
   {
-    title: "Vibrant Local Public Art Scene",
-    description: "Palo Alto boasts a rich public art program, enhancing local parks and public spaces with creative installations, contributing to a vibrant community atmosphere near our office.",
-    image: "/images/schematic_park.jpg",
+    title: "John Boulware Park",
+    description: "Surrounded by Palo Alto's well-designed park and green spaces, our location offers a refreshing work environment and recreational facilities.",
+    image: "/images/park.jpg",
   },
 ];
 
