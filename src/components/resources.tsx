@@ -53,8 +53,8 @@ const Resources = () => {
             <ul className="space-y-3">
               {category.items.map((item, index) => (
                 <li key={index} className="flex items-start text-left">
-                  <span className="inline-flex items-center justify-center h-6 w-6 rounded-full text-text-2 text-sm mr-3 mt-0.5 flex-shrink-0">
-                    ○ 
+                  <span className="inline-flex items-center justify-center h-6 w-6 rounded-full text-text-2 text-sm flex-shrink-0">
+                    •
                   </span>
                   <p className="text-base leading-relaxed">{item}</p>
                 </li>
