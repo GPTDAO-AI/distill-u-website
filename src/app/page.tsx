@@ -17,8 +17,8 @@ const Home = () => {
       </Suspense>
       <News />
       <Mission />
-      <Partners />
       <Resources />
+      <Partners />
       <Location />
       <Activities />
       <Gallery />

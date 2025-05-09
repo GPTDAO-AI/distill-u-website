@@ -34,25 +34,33 @@ const resourceCategories = [
 const Resources = () => {
   return (
     <SectionLayout title="Why Distill Labs?">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-        {resourceCategories.map((category) => (
+      <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-y-8 gap-x-8 md:gap-x-[2%] mt-4">
+        {resourceCategories.map((category, index) => (
           <div 
             key={category.id}
-            className="group relative p-8 border border-gray-800/30 rounded-lg hover:bg-bg-2 transition-all duration-300"
+            className="w-full md:w-[48%] group relative p-8 border border-gray-800/30 rounded-lg hover:bg-bg-2 transition-all duration-300"
           >
-            <h3 className="text-xl text-text-2 font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200 mb-4">
-              {category.title}
-            </h3>
+            <div className="absolute -top-4 left-8">
+              <span className="inline-flex items-center justify-center h-8 px-3 rounded-full bg-bg-2 text-text-2 text-sm font-medium">
+                0{index + 1}
+              </span>
+            </div>
             
-            <div className="h-[1px] w-full bg-gray-800/30 mb-4"></div>
-            
-            <ul className="space-y-3">
-              {category.items.map((item, index) => (
-                <li key={index} className="flex items-start text-center">
-                  <p className="text-base leading-relaxed">{item}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col gap-4 pt-4">
+              <h3 className="text-xl font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200">
+                {category.title}
+              </h3>
+              
+              <div className="h-[1px] w-full bg-gray-800/30"></div>
+              
+              <ul className="space-y-3">
+                {category.items.map((item, idx) => (
+                  <li key={idx} className="text-base leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
