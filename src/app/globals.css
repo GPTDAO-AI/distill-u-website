@@ -21,3 +21,8 @@
     --foreground: #ededed;
   }
 }
+
+::selection {
+  background-color: #003153;
+  color: #fbf7f0;
+}
