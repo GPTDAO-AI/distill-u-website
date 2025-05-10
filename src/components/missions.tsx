@@ -20,7 +20,7 @@ const missions = [
 
 const Missions = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center px-4">
+    <div className="min-h-screen w-full flex flex-col items-center">
       {missions.map((mission, index) => (
         <div 
           key={mission.id} 

@@ -204,7 +204,7 @@ const SectionContent = ({ section }: { section: TabContent }) => {
         {isOpen && (
           <div className="w-full pl-4 flex flex-col gap-4">
             {section.sections.map((section, idx) => (
-              <SectionContent key={idx} section={section} />
+              <SectionContent key={idx + section.title} section={section} />
             ))}
           </div>
         )}
