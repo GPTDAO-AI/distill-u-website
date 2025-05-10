@@ -68,7 +68,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="h-screen w-full max-w-7xl flex flex-col items-start justify-center md:items-center gap-y-24 md:gap-y-36 py-4 md:py-8">
+    <div className="h-screen w-full max-w-7xl flex flex-col items-start justify-center md:items-center gap-y-24 md:gap-y-36 py-4 md:py-8 px-4">
       <div className="text-5xl md:text-7xl lg:text-8xl flex flex-wrap items-center justify-center">
         <span className="inline-block">Distill</span>
         <span className="inline-block">&nbsp;</span>
