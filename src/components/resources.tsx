@@ -34,7 +34,7 @@ const resourceCategories = [
 const Resources = () => {
   return (
     <SectionLayout title="Why Distill Labs?">
-      <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-y-8 gap-x-8 md:gap-x-[2%] mt-4">
+      <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-y-8 gap-x-8 md:gap-x-[2%] py-8">
         {resourceCategories.map((category, index) => (
           <div 
             key={category.id}
