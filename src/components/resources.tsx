@@ -3,63 +3,64 @@ import SectionLayout from "@/layouts/section-layout";
 const resourceCategories = [
   {
     id: "1",
-    title: "Funding & Mentorship",
+    title: "Headquartered in the heart of Palo Alto, Silicon Valley",
     items: [
-      "Seed investments and Web3 token-based fundraising",
-      "Expert guidance from AI veterans and Silicon Valley leaders"
+      "Our office is located in downtown Palo Alto, just steps from Sand Hill Road and Stanford University—at the epicenter of global innovation and venture capital."
     ]
   },
   {
     id: "2",
-    title: "Pitch & Discussion",
+    title: "100+ In-Person Meetups Annually",
     items: [
-      "Weekly pitch sessions, AI discussion panels, and hackathons",
-      "Solo speaking slots at the high-profile GenAI Summit"
+      "We organize 100+ exclusive events each year across innovation hubs including Silicon Valley, New York, Singapore, and Shanghai, facilitating direct investor-startup engagement."
     ]
   },
   {
     id: "3",
-    title: "Community & Network",
+    title: "Vetted Deal Flow with Real Traction",
     items: [
-      "Access to top VCs, researchers, and industry partners",
-      "Prime location in Palo Alto, 5 minutes from Stanford University"
+      "Our portfolio companies undergo dual-layer screening for market potential and technical strength, and are often recognized by leading accelerators, media outlets, and follow-on investors."
     ]
   },
   {
     id: "4",
-    title: "Hackathon",
+    title: "No hype. Only outcomes",
     items: [
-      "Join our monthly hackathon and get community attention",
-      "Get a chance to pitch your project to top VCs and researchers"
+      "Distill Labs prioritizes capital efficiency and high-return growth through real resources and aligned incentives—building a performance-driven founder-investor ecosystem."
     ]
-  }
+  },
 ];
 
 const Resources = () => {
   return (
-    <SectionLayout title="Resources">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-        {resourceCategories.map((category) => (
+    <SectionLayout title="Why Distill Labs?">
+      <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-y-8 gap-x-8 md:gap-x-[2%] py-8">
+        {resourceCategories.map((category, index) => (
           <div 
             key={category.id}
-            className="group relative p-8 border border-gray-800/30 rounded-lg hover:bg-bg-2 transition-all duration-300"
+            className="w-full md:w-[48%] group relative p-8 border border-gray-800/30 rounded-lg hover:bg-bg-2 transition-all duration-300"
           >
-            <h3 className="text-xl text-text-2 font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200 mb-4">
-              {category.title}
-            </h3>
+            <div className="absolute -top-4 left-8">
+              <span className="inline-flex items-center justify-center h-8 px-3 rounded-full bg-bg-2 text-text-2 text-sm font-medium">
+                0{index + 1}
+              </span>
+            </div>
             
-            <div className="h-[1px] w-full bg-gray-800/30 mb-4"></div>
-            
-            <ul className="space-y-3">
-              {category.items.map((item, index) => (
-                <li key={index} className="flex items-start text-left">
-                  <span className="inline-flex items-center justify-center h-6 w-6 rounded-full text-text-2 text-sm flex-shrink-0">
-                    •
-                  </span>
-                  <p className="text-base leading-relaxed">{item}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col gap-4 pt-4">
+              <h3 className="text-xl font-semibold tracking-tight group-hover:text-text-2 transition-colors duration-200">
+                {category.title}
+              </h3>
+              
+              <div className="h-[1px] w-full bg-gray-800/30"></div>
+              
+              <ul className="space-y-3">
+                {category.items.map((item, idx) => (
+                  <li key={idx} className="text-base leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
