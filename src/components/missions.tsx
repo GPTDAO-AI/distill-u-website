@@ -26,12 +26,10 @@ const Missions = () => {
           key={mission.id} 
           className="w-full group hover:bg-text-2 transition-all duration-300 py-8 md:py-20 lg:py-16 flex flex-col items-center"
         >
-            
           <div className={`w-full max-w-7xl flex flex-col gap-8 ${index % 2 === 0 ? "items-start text-left" : "items-end text-right"}`}>
             <h3 className="text-text-2 group-hover:text-bg-1 transition-all duration-300 text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight">
               {mission.title}
             </h3>
-              
             <p className="w-full md:w-[80%] text-2xl lg:text-3xl leading-relaxed group-hover:text-bg-1 transition-all duration-300">
               {mission.description}
             </p>
