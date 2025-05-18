@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Banner = () => {
   const [currentText, setCurrentText] = useState("");
@@ -101,10 +102,19 @@ const Banner = () => {
           </motion.span>
         </div>
       </div>
-      <div className="w-full text-lg md:text-xl lg:text-2xl flex justify-end">
-        <p className="w-full md:w-1/2 text-left">
+      <div className="w-full flex justify-end">
+        <div className="w-full md:w-1/2 flex flex-col items-start gap-y-4">
+          <p className="text-lg md:text-xl lg:text-2xl text-left">
           We partner with visionary founders at day one, leveraging Palo Alto&apos;s unmatched ecosystem to sharpen technology, scale markets, and execute relentlessly. No hype, no shortcuts — just Silicon Valley&apos;s blueprint for turning AI moonshots into trillion-dollar realities.
-        </p>
+          </p>
+          <Link
+            href="https://tally.so/r/3XylDV"
+            target="_blank"
+            className="rounded-md bg-text-2 text-bg-1 px-4 py-2 hover:bg-text-1 font-medium transition-all duration-300"
+          >
+            Apply
+          </Link>
+        </div>
       </div>
     </div>
   );
