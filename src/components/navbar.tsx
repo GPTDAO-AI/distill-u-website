@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   {
@@ -16,7 +17,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-[50%] translate-x-[-50%] right-0 z-40 w-full bg-bg-1 flex justify-center items-center border-b border-text-1 p-4">
       <div className="max-w-7xl w-full flex justify-between items-center">
-        <h1 className="text-2xl font-medium">Distill Labs</h1>
+        <Image className="w-30 h-15" src="/logo.png" alt="Distill Labs" width={100} height={100} />
         <div className="flex items-center gap-4">
           {links.map((link) => (
             <Link
