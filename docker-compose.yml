@@ -10,3 +10,7 @@ services:
       - 3008:3008
     env_file:
       - .env
+
+networks:
+  genai-web-network:
+    external: true
