@@ -8,6 +8,8 @@ services:
     restart: unless-stopped
     ports:
       - 3008:3008
+    networks:
+      - genai-web-network
     env_file:
       - .env
 
